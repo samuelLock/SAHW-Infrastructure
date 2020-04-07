@@ -1,0 +1,5 @@
+{
+    "DBSubnetGroupName": "superAwesomeSubnetGroup",
+    "DBSubnetGroupDescription": "subnet group for superAwesome",
+    "SubnetIds": []
+}

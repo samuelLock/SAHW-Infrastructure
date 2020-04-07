@@ -1,0 +1,47 @@
+{
+    "CidrIp": "",
+    "FromPort": 0,
+    "GroupId": "",
+    "GroupName": "",
+    "IpPermissions": [
+        {
+            "FromPort": 0,
+            "IpProtocol": "",
+            "IpRanges": [
+                {
+                    "CidrIp": "",
+                    "Description": ""
+                }
+            ],
+            "Ipv6Ranges": [
+                {
+                    "CidrIpv6": "",
+                    "Description": ""
+                }
+            ],
+            "PrefixListIds": [
+                {
+                    "Description": "",
+                    "PrefixListId": ""
+                }
+            ],
+            "ToPort": 0,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "",
+                    "GroupId": "",
+                    "GroupName": "",
+                    "PeeringStatus": "",
+                    "UserId": "",
+                    "VpcId": "",
+                    "VpcPeeringConnectionId": ""
+                }
+            ]
+        }
+    ],
+    "IpProtocol": "",
+    "SourceSecurityGroupName": "",
+    "SourceSecurityGroupOwnerId": "",
+    "ToPort": 0,
+    "DryRun": true
+}

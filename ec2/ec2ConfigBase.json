@@ -1,0 +1,7 @@
+{
+    "ImageId": "ami-028188d9b49b32a80",
+    "InstanceType": "t2.micro",
+    "SecurityGroupIds": [],
+    "SubnetId": "TBC",
+    "KeyName": "SuperAwesomeKey"
+}

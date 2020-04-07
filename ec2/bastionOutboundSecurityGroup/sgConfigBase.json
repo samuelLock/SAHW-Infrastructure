@@ -1,0 +1,5 @@
+{
+    "Description": "Bastion Security Group",
+    "GroupName": "out-bastion-sg",
+    "VpcId": "TBC"
+}
