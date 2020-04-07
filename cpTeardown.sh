@@ -3,6 +3,7 @@ cd "$(dirname "$0")"
 
 export VPC_ID=$(cat $(dirname "$0")/vpc/build/vpcState.json | jq -r '.Vpc.VpcId')
 export BASTION_EC2_INSTANCE_ID=$(cat $(dirname "$0")/ec2/build/ec2State.json| jq -r '.Instances[0].InstanceId')
+export BASTION_ADDRESS_ID=$(cat $(dirname "$0")/ec2/build/ec2AddressState.json) | jq -r '.AssocationId'
 export OUT_SG_GROUP_ID=$(cat $(dirname "$0")/ec2/bastionOutboundSecurityGroup/build/sgState.json| jq -r '.GroupId')
 export IN_SG_GROUP_ID=$(cat $(dirname "$0")/ec2/bastionInboundSecurityGroup/build/sgState.json| jq -r '.GroupId')
 export ROUTETABLE_ID=$(aws ec2 describe-route-tables | jq -c ".RouteTables[] | select (.VpcId | contains(\"$VPC_ID\"))" | jq -r '.RouteTableId')

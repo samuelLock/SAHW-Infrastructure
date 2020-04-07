@@ -1,6 +1,8 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
+aws ec2 release-address --allocation-id $BASTION_ADDRESS_ID
+
 aws ec2 delete-key-pair --key-name 'SuperAwesomeKey'
 ec2InstanceId=$(cat build/ec2State.json | jq -r '.Instances[0].InstanceId')
 

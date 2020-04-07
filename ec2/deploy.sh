@@ -10,6 +10,10 @@ ec2=$(aws ec2 run-instances --cli-input-json file://build/ec2Config.json)
 bastionEc2InstanceId=$(echo $ec2 | jq -r '.Instances[0].InstanceId')
 
 aws ec2 wait instance-running --instance-ids $bastionEc2InstanceId
-#aws ec2 associate-address --instance-id $bastionEc2InstanceId
 
+address=$(aws ec2 allocate-address)
+allocationId=$(echo $address | jq -r '.AllocationId')
+echo $address > build/ec2AddressState.json
+
+aws ec2 associate-address --allocation-id $allocationId --instance-id $bastionEc2InstanceId
 echo $ec2 > build/ec2State.json
