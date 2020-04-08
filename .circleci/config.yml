@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Is docker installed?
-        command:  docker -v
+          name: Is docker installed?
+          command:  docker -v
       - setup_remote_docker
       - run:
           name: Is docker installed?
