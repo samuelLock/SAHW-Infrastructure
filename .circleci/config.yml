@@ -8,6 +8,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - checkout
+      - setup_remote_docker
       - aws-cli/install
       - aws-cli/setup
       - run: git clone https://github.com/samuelLock/superAwesomeHelloWorld.git
