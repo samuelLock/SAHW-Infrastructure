@@ -4,7 +4,7 @@ orbs:
   aws-cli: circleci/aws-cli@1.0.0
 
 jobs:
-  prepare:
+  deploy:
     executor: aws-cli/default
     steps:
       - checkout
@@ -12,14 +12,10 @@ jobs:
       - aws-cli/setup
       - run: git clone https://github.com/samuelLock/superAwesomeHelloWorld.git
       - run:  curl -Lo /usr/local/bin/ecs-preview https://github.com/aws/amazon-ecs-cli-v2/releases/download/v0.0.7/ecs-preview-darwin-v0.0.7 && chmod +x /usr/local/bin/ecs-preview && ecs-preview --help
-
-  deploy:
-    executor: aws-cli/default
-    steps: 
       - run: ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
+      
 
 workflows:
   main:
     jobs:
-      - prepare
       - deploy
