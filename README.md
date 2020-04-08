@@ -18,4 +18,8 @@ Limitations:
     -   Currently only HTTP (insecure).
 
 Notes:
-    - Before discovering AWS ECS CLI v2, an automated deployment mechanism using the AWS CLI was created. This was no longer needed and was moved to the 'legacy' folder.
+    -   Before discovering AWS ECS CLI v2, an automated deployment mechanism using the AWS CLI was created. This was no longer needed and was moved to the 'legacy' folder.
+    -   The legacy automation is triggered by the 'cpdeployment.sh'/'cpteardown.sh' scripts (no arguments needed).
+    -   Each component's directory contains a shell script and a base configuration file (including any hardcoded values)
+    -   The results of the deployment can be found in the various 'build' directories for each component which are created during the deployment process.
+    -   The build directories are deleted during the 'teardown.sh' when executed.
