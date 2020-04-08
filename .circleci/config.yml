@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-    prepare:
+  prepare:
     steps:
       - checkout
       - run:
@@ -13,7 +13,7 @@ jobs:
       - run:
           command: curl -Lo /usr/local/bin/ecs-preview https://github.com/aws/amazon-ecs-cli-v2/releases/download/v0.0.7/ecs-preview-darwin-v0.0.7 && chmod +x /usr/local/bin/ecs-preview && ecs-preview --help
           name: install aws ecs cli
-    deploy:
+  deploy:
     steps:
       - run:
         command: ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
