@@ -16,3 +16,6 @@ Limitations:
         .   'ecs-preview project delete'
     -   The URL to reach the deployment is the final line of the pipeline's logs, however the $AWS_DEFAULT_REGION has been masked in the URL (a default feature of CircleCI due to the fact it is an env var). Simply replace the missing characters with the region code and the URL should work fine.
     -   Currently only HTTP (insecure).
+
+Notes:
+    - Before discovering AWS ECS CLI v2, an automated deployment mechanism using the AWS CLI was created. This was no longer needed and was moved to the 'legacy' folder.
