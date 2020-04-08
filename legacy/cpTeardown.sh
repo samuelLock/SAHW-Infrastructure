@@ -27,3 +27,6 @@ bash vpc/subnet/teardown.sh
 
 # VPC Teardown
 bash vpc/teardown.sh
+
+# ECR Teardown
+bash ecr/teardown.sh

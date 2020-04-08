@@ -20,7 +20,7 @@ export INTERNETGATEWAY_ID=$(cat $(dirname "$0")/vpc/internetGateway/build/intern
 export ROUTETABLE_ID=$(aws ec2 describe-route-tables | jq -c ".RouteTables[] | select (.VpcId | contains(\"$VPC_ID\"))" | jq -r '.RouteTableId')
 bash vpc/routeTable/deploy.sh
 
-#Bastion Deployment
+# Bastion Deployment
 bash ec2/bastionInboundSecurityGroup/deploy.sh
 export IN_SG_GROUP_ID=$(cat $(dirname "$0")/ec2/bastionInboundSecurityGroup/build/sgState.json| jq -r '.GroupId')
 
@@ -29,3 +29,6 @@ export OUT_SG_GROUP_ID=$(cat $(dirname "$0")/ec2/bastionOutboundSecurityGroup/bu
 
 bash ec2/deploy.sh
 export BASTION_EC2_INSTANCE_ID=$(cat $(dirname "$0")/ec2/build/ec2State.json| jq -r '.Instances[0].InstanceId')
+
+# ECR Repository Deployment
+bash ecr/deploy.sh
