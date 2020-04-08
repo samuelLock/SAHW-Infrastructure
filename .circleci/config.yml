@@ -11,7 +11,7 @@ jobs:
       - aws-cli/install
       - aws-cli/setup
       - run: git clone https://github.com/samuelLock/superAwesomeHelloWorld.git
-      # - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install --update
       - run: ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
       
 
