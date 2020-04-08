@@ -13,7 +13,7 @@ jobs:
       - run: git clone https://github.com/samuelLock/superAwesomeHelloWorld.git
       - run: sudo chmod +w /usr/local/bin/
       - run: sudo curl -Lo /usr/local/bin/ecs-preview https://github.com/aws/amazon-ecs-cli-v2/releases/download/v0.0.7/ecs-preview-linux-v0.0.7 && sudo chmod +x /usr/local/bin/ecs-preview && ecs-preview --help
-      - run: cd superAwesomeHelloWorld && ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
+      - run: cd superAwesomeHelloWorld && ls && ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
       
 
 workflows:
