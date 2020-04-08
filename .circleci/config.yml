@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   build:
+    docker:
+      - image: circleci/python:3.6.4
     steps:
       - checkout
       - run:
@@ -14,6 +16,8 @@ jobs:
           command: curl -Lo /usr/local/bin/ecs-preview https://github.com/aws/amazon-ecs-cli-v2/releases/download/v0.0.7/ecs-preview-darwin-v0.0.7 && chmod +x /usr/local/bin/ecs-preview && ecs-preview --help
           name: install aws ecs cli
   deploy:
+    docker:
+      - image: circleci/python:3.6.4
     steps:
       - run:
         command: ecs-preview init --project superawesome-helloworld -app helloworld-static --app-type 'Load Balanced Web App' --dockerfile './Dockerfile' --port 5000 --deploy
